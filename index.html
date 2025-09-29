@@ -1,112 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TrashApps Entertainment</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background-image: url('images/header-bg.png');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      text-align: center;
-      padding: 4rem 1rem;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    }
-    nav {
-      background: #444;
-      padding: 0.5rem;
-      text-align: center;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 1rem;
-      text-decoration: none;
-    }
-    section {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-    h1, h2 {
-      color: #222;
-    }
-    ul {
-      list-style-type: disc;
-      padding-left: 1.2rem;
-    }
-    footer {
-      background: #333;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-  </style>
-</head>
-<body>
-  
-  <header>
-    <h1>TrashApps Entertainment</h1>
-    <p>Making indie games with heart, humor, and a little bit of chaos</p>
-  </header>
+<style>
+  /* Add this inside your <style> section */
+  .app-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .app-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
 
+  /* Image container for 1:1 aspect ratio */
+  .app-image {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* keeps square ratio */
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+  }
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#apps">Apps</a>
-    <a href="#privacy">Privacy Policy</a>
-  </nav>
+  .app-card h3 {
+    margin: 0.25rem 0;
+    color: var(--dark);
+  }
 
-<section id="home">
-  <h2>Home</h2>
-  <p>Welcome to <strong>TrashApps Entertainment</strong> — a small but passionate indie game team creating fun, quirky, and sometimes downright weird games. Here you’ll find our latest projects, game previews, and all the important info like privacy policies.</p>
-</section>
-
-  <section id="apps">
-    <h2>My Apps</h2>
-    <ul>
-      <li><strong>App One</strong> – <a href="https://example.com/app1" target="_blank">View App</a></li>
-      <li><strong>App Two</strong> – <a href="https://example.com/app2" target="_blank">View App</a></li>
-      <!-- Add more apps here -->
-    </ul>
-  </section>
-
-<section id="privacy">
-  <h2>Privacy Policy</h2>
-  
-  <details>
-    <p>
-      This Privacy Policy applies to all applications published by <strong>TrashApps Entertainment</strong>.
-      We do not collect, store, or share any personal information unless explicitly stated in
-      the app description.
-    </p>
-    <p>
-      Some apps may use third-party services (such as Google Play Services, Firebase Analytics, or AdMob)
-      that might collect information for analytics and advertising purposes. Please refer to their
-      respective privacy policies for details.
-    </p>
-    <p>
-      By using our applications, you agree to this Privacy Policy. If you have any questions,
-      contact us at <a href="mailto:trashappsentertainment@gmail.com">trashappsentertainment@gmail.com</a>.
-    </p>
-    <p>Last updated: August 13, 2025</p>
-  </details>
-</section>
-
-
-  <footer>
-    &copy; 2025 TrashApps Entertainment. All rights reserved.
-  </footer>
-
-</body>
-</html>
+  .app-card a {
+    display: inline-block;
+    margin-top: auto;
+    padding: 0.5rem 1rem;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  .app-card a:hover {
+    background: #e33b1a;
+  }
+</style>
