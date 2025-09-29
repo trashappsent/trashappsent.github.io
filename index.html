@@ -5,53 +5,135 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TrashApps Entertainment</title>
   <style>
-  /* Add this inside your <style> section */
-  .app-card {
-    background: white;
-    border-radius: 12px;
-    padding: 1rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  .app-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  }
+    /* Global Styles */
+    :root {
+      --primary: #ff4c29;
+      --dark: #222;
+      --light: #f9f9f9;
+      --gray: #555;
+    }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
 
-  /* Image container for 1:1 aspect ratio */
-  .app-image {
-    width: 100%;
-    aspect-ratio: 1 / 1; /* keeps square ratio */
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
-  }
+    /* Header */
+    header {
+      background-image: url('images/header-bg.png');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 5rem 1rem;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    }
+    header h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
 
-  .app-card h3 {
-    margin: 0.25rem 0;
-    color: var(--dark);
-  }
+    /* Navigation */
+    nav {
+      background: var(--dark);
+      padding: 0.75rem;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--primary);
+    }
 
-  .app-card a {
-    display: inline-block;
-    margin-top: auto;
-    padding: 0.5rem 1rem;
-    background: var(--primary);
-    color: #fff;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
-  }
-  .app-card a:hover {
-    background: #e33b1a;
-  }
-</style>
+    /* Sections */
+    section {
+      padding: 3rem 1.5rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h2 {
+      margin-bottom: 1rem;
+      color: var(--dark);
+      font-size: 1.8rem;
+      text-align: center;
+    }
+    
+    
 
+    /* Apps Grid */
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .app-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .app-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .app-card h3 {
+      margin: 0.5rem 0;
+      color: var(--dark);
+    }
+    .app-card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .app-card a:hover {
+      background: #e33b1a;
+    }
+
+    /* Privacy Policy */
+    details {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    details summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: #fff;
+      text-align: center;
+      padding: 1.2rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
   
@@ -75,24 +157,15 @@
   </section>
 
   <section id="apps">
-  <h2>Our Apps</h2>
-  <div class="apps-grid">
-    <div class="app-card">
-      <div class="app-image" style="background-image: url('https://example.com/app1-image.png');"></div>
-      <h3>App One</h3>
-      <p>Welcome to the Book of Lies—where dragons ask questions and wrong answers hurt. Literally.</p>
-      <a href="https://play.google.com/store/apps/details?id=com.trashapps.bookoflies2&pli=1" target="_blank">View App</a>
+    <h2>Our Games</h2>
+    <div class="apps-grid">
+      <div class="app-card">
+        <h3>Book of Lies: Mindcrawler</h3>
+        <p>Welcome to the Book of Lies — where dragons ask questions and wrong answers hurt. Literally.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.trashapps.bookoflies2&pli=1" target="_blank">View Game</a>
+      </div>
+      <!-- Add more app cards here -->
     </div>
-
-    <div class="app-card">
-      <div class="app-image" style="background-image: url('https://example.com/app2-image.png');"></div>
-      <h3>App Two</h3>
-      <p>Weird but wonderful fun for everyone.</p>
-      <a href="https://example.com/app2" target="_blank">View App</a>
-    </div>
-
-    <!-- Add more app cards like this -->
-  </div>
   </section>
 
   <section id="privacy">
