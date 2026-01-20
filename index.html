@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,7 +76,7 @@
     /* Apps Grid */
     .apps-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1.5rem;
       margin-top: 2rem;
     }
@@ -133,8 +134,35 @@
       margin-top: 2rem;
       font-size: 0.9rem;
     }
+    
+    .app-buttons {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .app-buttons a {
+      padding: 0.5rem 1rem;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+    
+    .app-buttons a:hover {
+      background: #e33b1a;
+    }
+
   </style>
 </head>
+
+
+
 <body>
   
   <header>
@@ -156,17 +184,11 @@
     </p>
   </section>
 
-  <section id="apps">
-    <h2>Our Games</h2>
-    <div class="apps-grid">
-      <div class="app-card">
-        <h3>Book of Lies: Mindcrawler</h3>
-        <p>Welcome to the Book of Lies — where dragons ask questions and wrong answers hurt. Literally.</p>
-        <a href="https://play.google.com/store/apps/details?id=com.trashapps.bookoflies2&pli=1" target="_blank">View Game</a>
-      </div>
-      <!-- Add more app cards here -->
-    </div>
-  </section>
+<section id="apps">
+  <h2>Our Games</h2>
+  <div class="apps-grid" id="appsGrid"></div>
+</section>
+
 
   <section id="privacy">
     <h2>Privacy Policy</h2>
@@ -193,6 +215,47 @@
   <footer>
     &copy; 2025 TrashApps Entertainment. All rights reserved.
   </footer>
+<script>
+  const games = [
+    {
+      title: "Book of Lies: Mindcrawler",
+      description:
+        "Welcome to the Book of Lies — where dragons ask questions and wrong answers hurt. Literally.",
+      links: [
+        {
+          label: "Google Play",
+          url: "https://play.google.com/store/apps/details?id=com.trashapps.bookoflies2&pli=1"
+        },
+        {
+          label: "App Store",
+          url: "https://play.google.com/store/apps/details?id=com.trashapps.bookoflies2&pli=1"
+        }
+      ]
+    }
+  ];
+
+  const appsGrid = document.getElementById("appsGrid");
+
+  games.forEach(game => {
+    const card = document.createElement("div");
+    card.className = "app-card";
+
+    card.innerHTML = `
+      <h3>${game.title}</h3>
+      <p>${game.description}</p>
+      <div class="app-buttons">
+        ${game.links
+          .map(
+            link =>
+              `<a href="${link.url}" target="_blank">${link.label}</a>`
+          )
+          .join("")}
+      </div>
+    `;
+
+    appsGrid.appendChild(card);
+  });
+</script>
 
 </body>
 </html>
