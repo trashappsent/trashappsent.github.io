@@ -107,9 +107,6 @@
       font-weight: bold;
       transition: background 0.3s;
     }
-    .app-card a:hover {
-      background: #e33b1a;
-    }
 
     /* Privacy Policy */
     details {
@@ -154,8 +151,37 @@
       transition: background 0.3s;
     }
     
-    .app-buttons a:hover {
-      background: #e33b1a;
+    .app-buttons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      padding: 0;
+    }
+    
+    .app-buttons img {
+      height: 120px;
+      width: auto;
+      display: block;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    
+    .app-buttons a:hover img {
+      transform: scale(1.05);
+      opacity: 0.9;
+      
+    }
+    
+    /* Fallback text buttons (if no image) */
+    .app-buttons a.text-button {
+          padding: 0.5rem 1rem;
+          border-radius: 6px;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 0.9rem;
+          transition: background 0.3s;
+          background: #e33b1a;
+          height: 40px;   
     }
 
   </style>
@@ -223,30 +249,19 @@
         "Welcome to the Book of Lies — where dragons ask questions and wrong answers hurt. Literally.",
       links: [
         {
-          label: "Google Play",
+          type: "image",
+          img: "images/google-play-badge.png",
+          alt: "Get it on Google Play",
           url: "https://play.google.com/store/apps/details?id=com.trashapps.bookoflies2&pli=1"
         },
         {
-          label: "App Store",
+          type: "image",
+          img: "images/appstore-badge.png",
+          alt: "Get it on Google Play",
           url: "https://play.google.com/store/apps/details?id=com.trashapps.bookoflies2&pli=1"
         }
       ]
     },
-    {
-      title: "Book of Lies: Mindcrawler",
-      description:
-        "Welcome to the Book of Lies — where dragons ask questions and wrong answers hurt. Literally.",
-      links: [
-        {
-          label: "Google Play",
-          url: "https://play.google.com/store/apps/details?id=com.trashapps.bookoflies2&pli=1"
-        },
-        {
-          label: "App Store",
-          url: "https://play.google.com/store/apps/details?id=com.trashapps.bookoflies2&pli=1"
-        }
-      ]
-    }
   ];
 
   const appsGrid = document.getElementById("appsGrid");
@@ -255,22 +270,34 @@
     const card = document.createElement("div");
     card.className = "app-card";
 
+    const buttonsHTML = game.links
+      .map(link => {
+        if (link.type === "image") {
+          return `
+            <a href="${link.url}" target="_blank" aria-label="${link.alt}">
+              <img src="${link.img}" alt="${link.alt}">
+            </a>
+          `;
+        } else {
+          return `
+            <a href="${link.url}" target="_blank" class="text-button">
+              ${link.label}
+            </a>
+          `;
+        }
+      })
+      .join("");
+
     card.innerHTML = `
       <h3>${game.title}</h3>
       <p>${game.description}</p>
       <div class="app-buttons">
-        ${game.links
-          .map(
-            link =>
-              `<a href="${link.url}" target="_blank">${link.label}</a>`
-          )
-          .join("")}
+        ${buttonsHTML}
       </div>
     `;
 
     appsGrid.appendChild(card);
   });
 </script>
-
 </body>
 </html>
