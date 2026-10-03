@@ -1,205 +1,183 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#121216" />
+  <meta name="color-scheme" content="dark" />
   <title>TrashApps Entertainment</title>
   <style>
     /* Global Styles */
     :root {
-      --primary: #ff4c29;
-      --dark: #222;
-      --light: #f9f9f9;
-      --gray: #555;
+      --primary: #ff6b4a;
+      --primary-soft: rgba(255, 107, 74, 0.14);
+      --bg: #121216;
+      --surface: #1b1b21;
+      --surface-2: #23232b;
+      --border: #2e2e38;
+      --text: #e4e4ea;
+      --muted: #9d9daa;
+      --radius: 14px;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 4rem; /* keep anchors clear of the sticky nav */
     }
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
+      font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img {
+      max-width: 100%;
+    }
+    a {
+      color: var(--primary);
     }
 
     /* Header */
     header {
-      background-image: url('images/header-bg.png');
-      background-size: cover;
-      background-position: center;
-      color: white;
+      background:
+        radial-gradient(ellipse at 50% 35%, #2a2a33 0%, var(--bg) 70%);
       text-align: center;
-      padding: 5rem 1rem;
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+      padding: clamp(2rem, 6vw, 4rem) 1rem clamp(1.5rem, 4vw, 3rem);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-logo {
+      display: block;
+      width: min(420px, 80vw);
+      height: auto;
+      margin: 0 auto 1.25rem;
+      filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.6));
     }
     header h1 {
-      margin: 0 0 0.5rem;
-      font-size: 2.5rem;
+      margin: 0 0 0.25rem;
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      letter-spacing: 0.02em;
     }
     header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
+      margin: 0 auto;
+      max-width: 36rem;
+      font-size: clamp(1rem, 2.6vw, 1.15rem);
+      color: var(--muted);
     }
 
     /* Navigation */
     nav {
-      background: var(--dark);
-      padding: 0.75rem;
-      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(18, 18, 22, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.6rem 1rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.25rem 0.5rem;
     }
     nav a {
-      color: #fff;
-      margin: 0 1rem;
+      color: var(--text);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
       text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
+      font-weight: 600;
+      font-size: 0.95rem;
+      white-space: nowrap;
+      transition: color 0.2s, background 0.2s;
     }
-    nav a:hover {
+    nav a:hover,
+    nav a:focus-visible {
       color: var(--primary);
+      background: var(--primary-soft);
     }
 
     /* Sections */
     section {
-      padding: 3rem 1.5rem;
+      padding: clamp(2rem, 6vw, 3.5rem) 1rem;
       max-width: 1100px;
       margin: auto;
     }
     h2 {
-      margin-bottom: 1rem;
-      color: var(--dark);
-      font-size: 1.8rem;
+      margin: 0 0 1.25rem;
+      color: var(--text);
+      font-size: clamp(1.4rem, 4vw, 1.8rem);
       text-align: center;
     }
-    
-    
+    h2::after {
+      content: "";
+      display: block;
+      width: 48px;
+      height: 3px;
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+      background: var(--primary);
+      opacity: 0.8;
+    }
+    .intro {
+      text-align: center;
+      max-width: 760px;
+      margin: auto;
+      color: var(--muted);
+    }
+    .intro strong {
+      color: var(--text);
+    }
 
     /* Apps Grid */
     .apps-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 1.5rem;
       margin-top: 2rem;
     }
-    /* Mobile fallback */
-    @media (max-width: 700px) {
-      .apps-grid {
-        grid-template-columns: 1fr;
-      }
-    }
     .app-card {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      flex: 1 1 320px;
+      max-width: 480px;
+      min-width: 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: clamp(1.25rem, 4vw, 2rem);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
       text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
     .app-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transform: translateY(-4px);
+      border-color: #3d3d4a;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
     }
     .app-card h3 {
       margin: 0.5rem 0;
-      color: var(--dark);
+      color: var(--text);
+      font-size: 1.25rem;
     }
-    .app-card a {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.5rem 1rem;
-      background: var(--primary);
-      color: #fff;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
+    .app-card p {
+      margin: 0;
+      color: var(--muted);
+      overflow-wrap: anywhere;
     }
 
-    /* Privacy Policy */
-    details {
-      background: #fff;
-      border-radius: 8px;
-      padding: 1rem 1.5rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-    details summary {
-      cursor: pointer;
-      font-weight: bold;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-
-    /* Footer */
-    footer {
-      background: var(--dark);
-      color: #fff;
-      text-align: center;
-      padding: 1.2rem;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-    }
-    
-    .app-buttons {
-      margin-top: 1rem;
-      display: flex;
-      gap: 0.5rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .app-buttons a {
-      padding: 0.5rem 1rem;
-      background: var(--primary);
-      color: #fff;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 0.9rem;
-      transition: background 0.3s;
-    }
-    
-    .app-buttons a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent;
-      padding: 0;
-    }
-    
-    .app-buttons img {
-      height: 60px;
-      width: auto;
-      display: block;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-    
-    .app-buttons a:hover img {
-      transform: scale(1.05);
-      opacity: 0.9;
-      
-    }
-    
-    /* Fallback text buttons (if no image) */
-    .app-buttons a.text-button {
-          padding: 0.5rem 1rem;
-          border-radius: 6px;
-          text-decoration: none;
-          font-weight: bold;
-          font-size: 0.9rem;
-          transition: background 0.3s;
-          background: #e33b1a;
-          height: 40px;   
-    }
-    
     .app-logo {
       width: 100%;
       max-width: 140px;
       aspect-ratio: 1 / 1;
       margin: 0 auto 1rem;
-      border-radius: 16px;
+      border-radius: 22%;
       overflow: hidden;
-      background: #f0f0f0;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
     }
-    
     .app-logo img {
       width: 100%;
       height: 100%;
@@ -207,14 +185,118 @@
       display: block;
     }
 
+    .app-buttons {
+      margin-top: 1.25rem;
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .app-buttons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .app-buttons img {
+      height: 52px;
+      width: auto;
+      max-width: 100%;
+      display: block;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .app-buttons a:hover img {
+      transform: scale(1.04);
+      opacity: 0.9;
+    }
+
+    /* Fallback text buttons (if no image) */
+    .app-buttons a.text-button {
+      padding: 0.6rem 1.1rem;
+      background: var(--primary);
+      color: #fff;
+      font-weight: bold;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+    }
+    .app-buttons a.text-button:hover {
+      background: #e85a3a;
+    }
+
+    /* Coming soon cards */
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      border: 1px solid rgba(255, 107, 74, 0.35);
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .coming-soon-note {
+      margin-top: 1.25rem;
+      padding: 0.75rem 1rem;
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      background: var(--surface-2);
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 420px) {
+      .app-buttons img {
+        height: 46px;
+      }
+    }
+
+    /* Privacy Policy */
+    details {
+      max-width: 800px;
+      margin: auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem clamp(1rem, 4vw, 1.5rem);
+    }
+    details summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--primary);
+    }
+    details[open] summary {
+      margin-bottom: 0.5rem;
+    }
+    details p {
+      color: var(--muted);
+      overflow-wrap: anywhere;
+    }
+    details strong {
+      color: var(--text);
+    }
+
+    /* Footer */
+    footer {
+      background: #0d0d10;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin-top: 2rem;
+      font-size: 0.875rem;
+    }
   </style>
 </head>
 
-
-
 <body>
-  
-  <header>
+
+  <header id="home">
+    <img class="header-logo" src="images/header-bg.png" alt="TrashApps raccoon logo" />
     <h1>TrashApps Entertainment</h1>
     <p>Making indie games with heart, humor, and a little bit of chaos</p>
   </header>
@@ -225,19 +307,18 @@
     <a href="#privacy">Privacy Policy</a>
   </nav>
 
-  <section id="home">
+  <section id="welcome">
     <h2>Welcome</h2>
-    <p style="text-align:center; max-width:800px; margin:auto;">
-      <strong>TrashApps Entertainment</strong> is a small but passionate indie game team creating fun, quirky, and sometimes downright weird games.  
+    <p class="intro">
+      <strong>TrashApps Entertainment</strong> is a small but passionate indie game team creating fun, quirky, and sometimes downright weird games.
       Explore our projects, get sneak peeks, and find all the important info like privacy policies right here.
     </p>
   </section>
 
-<section id="apps">
-  <h2>Our Games</h2>
-  <div class="apps-grid" id="appsGrid"></div>
-</section>
-
+  <section id="apps">
+    <h2>Our Games</h2>
+    <div class="apps-grid" id="appsGrid"></div>
+  </section>
 
   <section id="privacy">
     <h2>Privacy Policy</h2>
@@ -286,6 +367,14 @@
         }
       ]
     },
+    {
+      title: "Tap Drag Racer",
+      description:
+        "No throttle here, you run the engine by hand. Fire each piston in time with the crank and tap your way down the strip.",
+      logo: "images/drag-racer.png",
+      comingSoon: true,
+      links: []
+    },
   ];
 
   const appsGrid = document.getElementById("appsGrid");
@@ -306,13 +395,13 @@
       .map(link => {
         if (link.type === "image") {
           return `
-            <a href="${link.url}" target="_blank" aria-label="${link.alt}">
+            <a href="${link.url}" target="_blank" rel="noopener" aria-label="${link.alt}">
               <img src="${link.img}" alt="${link.alt}">
             </a>
           `;
         } else {
           return `
-            <a href="${link.url}" target="_blank" class="text-button">
+            <a href="${link.url}" target="_blank" rel="noopener" class="text-button">
               ${link.label}
             </a>
           `;
@@ -320,13 +409,18 @@
       })
       .join("");
 
+    const footerHTML = game.comingSoon
+      ? `<div class="coming-soon-note">Coming soon to Android &amp; iOS</div>`
+      : `<div class="app-buttons">${buttonsHTML}</div>`;
+
+    if (game.comingSoon) card.classList.add("coming-soon");
+
     card.innerHTML = `
       ${logoHTML}
+      ${game.comingSoon ? `<span class="badge">Coming soon</span>` : ""}
       <h3>${game.title}</h3>
       <p>${game.description}</p>
-      <div class="app-buttons">
-        ${buttonsHTML}
-      </div>
+      ${footerHTML}
     `;
 
     appsGrid.appendChild(card);
