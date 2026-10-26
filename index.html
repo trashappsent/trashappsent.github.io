@@ -55,6 +55,7 @@
       {
         "@type": "MobileApplication",
         "name": "Tap Drag Racer",
+        "url": "https://trashappsent.github.io/tap-drag-racer/",
         "description": "No throttle here, you run the engine by hand. Fire each piston in time with the crank and tap your way down the strip.",
         "image": "https://trashappsent.github.io/images/drag-racer.png",
         "operatingSystem": "Android, iOS",
@@ -70,6 +71,7 @@
       {
         "@type": "MobileApplication",
         "name": "Book of Lies: Mindcrawler",
+        "url": "https://trashappsent.github.io/book-of-lies-mindcrawler/",
         "description": "Welcome to the Book of Lies, where dragons ask questions and wrong answers hurt. Literally.",
         "image": "https://trashappsent.github.io/images/book-of-lies-2.png",
         "operatingSystem": "Android, iOS",
@@ -85,326 +87,7 @@
     ]
   }
   </script>
-  <style>
-    /* Global Styles */
-    :root {
-      --primary: #ff6b4a;
-      --primary-soft: rgba(255, 107, 74, 0.14);
-      --bg: #121216;
-      --surface: #1b1b21;
-      --surface-2: #23232b;
-      --border: #2e2e38;
-      --text: #e4e4ea;
-      --muted: #9d9daa;
-      --radius: 14px;
-    }
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 4rem; /* keep anchors clear of the sticky nav */
-    }
-    body {
-      font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-    img {
-      max-width: 100%;
-    }
-    a {
-      color: var(--primary);
-    }
-
-    /* Header */
-    header {
-      background:
-        radial-gradient(ellipse at 50% 35%, #2a2a33 0%, var(--bg) 70%);
-      text-align: center;
-      padding: clamp(2rem, 6vw, 4rem) 1rem clamp(1.5rem, 4vw, 3rem);
-      border-bottom: 1px solid var(--border);
-    }
-    .header-logo {
-      display: block;
-      width: min(420px, 80vw);
-      height: auto;
-      margin: 0 auto 1.25rem;
-      filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.6));
-    }
-    header h1 {
-      margin: 0 0 0.25rem;
-      font-size: clamp(1.6rem, 5vw, 2.4rem);
-      letter-spacing: 0.02em;
-    }
-    header p {
-      margin: 0 auto;
-      max-width: 36rem;
-      font-size: clamp(1rem, 2.6vw, 1.15rem);
-      color: var(--muted);
-    }
-
-    /* Navigation */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(18, 18, 22, 0.85);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-      padding: 0.6rem 1rem;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.25rem 0.5rem;
-    }
-    nav a {
-      color: var(--text);
-      padding: 0.35rem 0.85rem;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      white-space: nowrap;
-      transition: color 0.2s, background 0.2s;
-    }
-    nav a:hover,
-    nav a:focus-visible {
-      color: var(--primary);
-      background: var(--primary-soft);
-    }
-
-    /* Sections */
-    section {
-      padding: clamp(2rem, 6vw, 3.5rem) 1rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-    h2 {
-      margin: 0 0 1.25rem;
-      color: var(--text);
-      font-size: clamp(1.4rem, 4vw, 1.8rem);
-      text-align: center;
-    }
-    h2::after {
-      content: "";
-      display: block;
-      width: 48px;
-      height: 3px;
-      margin: 0.5rem auto 0;
-      border-radius: 2px;
-      background: var(--primary);
-      opacity: 0.8;
-    }
-    .intro {
-      text-align: center;
-      max-width: 760px;
-      margin: auto;
-      color: var(--muted);
-    }
-    .intro strong {
-      color: var(--text);
-    }
-
-    /* Apps Grid */
-    .apps-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .app-card {
-      flex: 1 1 320px;
-      max-width: 480px;
-      min-width: 0;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: clamp(1.25rem, 4vw, 2rem);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-      text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    }
-    .app-card:hover {
-      transform: translateY(-4px);
-      border-color: #3d3d4a;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-    }
-    .app-card h3 {
-      margin: 0.5rem 0;
-      color: var(--text);
-      font-size: 1.25rem;
-    }
-    .app-card p {
-      margin: 0;
-      color: var(--muted);
-      overflow-wrap: anywhere;
-    }
-
-    .app-logo {
-      width: 100%;
-      max-width: 140px;
-      aspect-ratio: 1 / 1;
-      margin: 0 auto 1rem;
-      border-radius: 22%;
-      overflow: hidden;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
-    }
-    .app-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .app-buttons {
-      margin-top: 1.25rem;
-      display: flex;
-      gap: 0.75rem;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .app-buttons a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 8px;
-      text-decoration: none;
-    }
-    .app-buttons img {
-      height: 52px;
-      width: auto;
-      max-width: 100%;
-      display: block;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-    .app-buttons a:hover img {
-      transform: scale(1.04);
-      opacity: 0.9;
-    }
-
-    /* Fallback text buttons (if no image) */
-    .app-buttons a.text-button {
-      padding: 0.6rem 1.1rem;
-      background: var(--primary);
-      color: #fff;
-      font-weight: bold;
-      font-size: 0.9rem;
-      transition: background 0.3s;
-    }
-    .app-buttons a.text-button:hover {
-      background: #e85a3a;
-    }
-
-    /* Coming soon cards */
-    .badge {
-      display: inline-block;
-      padding: 0.2rem 0.65rem;
-      border-radius: 999px;
-      background: var(--primary-soft);
-      border: 1px solid rgba(255, 107, 74, 0.35);
-      color: var(--primary);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-    .coming-soon-note {
-      margin-top: 1.25rem;
-      padding: 0.75rem 1rem;
-      border: 1px dashed var(--border);
-      border-radius: 8px;
-      background: var(--surface-2);
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 420px) {
-      .app-buttons img {
-        height: 46px;
-      }
-    }
-
-    /* Privacy Policy */
-    details {
-      max-width: 800px;
-      margin: auto;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem clamp(1rem, 4vw, 1.5rem);
-    }
-    details summary {
-      cursor: pointer;
-      font-weight: bold;
-      color: var(--primary);
-    }
-    details[open] summary {
-      margin-bottom: 0.5rem;
-    }
-    details p {
-      color: var(--muted);
-      overflow-wrap: anywhere;
-    }
-    details strong {
-      color: var(--text);
-    }
-
-    /* Footer */
-    footer {
-      background: #0d0d10;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      text-align: center;
-      padding: 1.5rem 1rem;
-      margin-top: 2rem;
-      font-size: 0.875rem;
-    }
-    /* Social links */
-    .socials {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1.25rem;
-    }
-    .socials a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      color: var(--text);
-      transition: color 0.2s, background 0.2s, border-color 0.2s, transform 0.2s;
-    }
-    .socials a:hover,
-    .socials a:focus-visible {
-      color: var(--primary);
-      background: var(--primary-soft);
-      border-color: rgba(255, 107, 74, 0.35);
-      transform: translateY(-2px);
-    }
-    .socials svg {
-      width: 20px;
-      height: 20px;
-      display: block;
-    }
-    footer .socials {
-      margin: 0 0 1rem;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
@@ -454,16 +137,18 @@
           <img src="images/pov-guesser.png" alt="POV Guesser app icon" width="192" height="192" loading="lazy">
         </div>
         <span class="badge">Coming soon</span>
-        <h3>POV Guesser</h3>
+        <h3><a href="pov-guesser/">POV Guesser</a></h3>
         <p>You're standing somewhere on the island. Read the hills, the coast and the snow lines, then find your spot on the map. A new daily challenge every day.</p>
+        <a class="more-link" href="pov-guesser/">More about POV Guesser &rarr;</a>
         <div class="coming-soon-note">Coming soon to Android &amp; iOS</div>
       </div>
       <div class="app-card">
         <div class="app-logo">
           <img src="images/drag-racer.png" alt="Tap Drag Racer app icon" width="192" height="192" loading="lazy">
         </div>
-        <h3>Tap Drag Racer</h3>
+        <h3><a href="tap-drag-racer/">Tap Drag Racer</a></h3>
         <p>No throttle here, you run the engine by hand. Fire each piston in time with the crank and tap your way down the strip.</p>
+        <a class="more-link" href="tap-drag-racer/">More about Tap Drag Racer &rarr;</a>
         <div class="app-buttons">
           <a href="https://play.google.com/store/apps/details?id=com.trashapps.tapdragracing" target="_blank" rel="noopener" aria-label="Get it on Google Play">
             <img src="images/google-play-badge.png" alt="Get it on Google Play">
@@ -477,8 +162,9 @@
         <div class="app-logo">
           <img src="images/book-of-lies-2.png" alt="Book of Lies: Mindcrawler app icon" width="192" height="192" loading="lazy">
         </div>
-        <h3>Book of Lies: Mindcrawler</h3>
+        <h3><a href="book-of-lies-mindcrawler/">Book of Lies: Mindcrawler</a></h3>
         <p>Welcome to the Book of Lies, where dragons ask questions and wrong answers hurt. Literally.</p>
+        <a class="more-link" href="book-of-lies-mindcrawler/">More about Book of Lies: Mindcrawler &rarr;</a>
         <div class="app-buttons">
           <a href="https://play.google.com/store/apps/details?id=com.trashapps.bookoflies2&amp;pli=1" target="_blank" rel="noopener" aria-label="Get it on Google Play">
             <img src="images/google-play-badge.png" alt="Get it on Google Play">
