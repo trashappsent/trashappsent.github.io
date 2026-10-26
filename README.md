@@ -12,7 +12,7 @@ Website for **TrashApps Entertainment**, a small indie team making quirky mobile
 
 ## Follow us
 
-[YouTube](https://www.youtube.com/@trashappsent) · [Facebook](https://www.facebook.com/trashapps) · [TikTok](https://www.tiktok.com/@trashappsent) · [Instagram](https://www.instagram.com/trashapps/)
+[YouTube](https://www.youtube.com/@trashappsent) · [Facebook](https://www.facebook.com/trashapps) · [TikTok](https://www.tiktok.com/@trashappsent) · [Instagram](https://www.instagram.com/trashapps/) · [X](https://x.com/trashappsent)
 
 ## Contact
 
