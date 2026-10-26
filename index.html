@@ -5,7 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#121216" />
   <meta name="color-scheme" content="dark" />
-  <title>TrashApps Entertainment</title>
+  <title>TrashApps Entertainment | Indie Mobile Games</title>
+  <meta name="description" content="TrashApps Entertainment makes quirky indie mobile games: Tap Drag Racer, Book of Lies: Mindcrawler and POV Guesser. Free on Google Play and the App Store." />
+  <link rel="canonical" href="https://trashappsent.github.io/" />
+  <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+  <!-- Social previews -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="TrashApps Entertainment" />
+  <meta property="og:title" content="TrashApps Entertainment | Indie Mobile Games" />
+  <meta property="og:description" content="Quirky indie mobile games: Tap Drag Racer, Book of Lies: Mindcrawler and POV Guesser." />
+  <meta property="og:url" content="https://trashappsent.github.io/" />
+  <meta property="og:image" content="https://trashappsent.github.io/images/header-bg.png" />
+  <meta property="og:image:width" content="1958" />
+  <meta property="og:image:height" content="1368" />
+  <meta property="og:image:alt" content="TrashApps raccoon logo" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TrashApps Entertainment | Indie Mobile Games" />
+  <meta name="twitter:description" content="Quirky indie mobile games: Tap Drag Racer, Book of Lies: Mindcrawler and POV Guesser." />
+  <meta name="twitter:image" content="https://trashappsent.github.io/images/header-bg.png" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://trashappsent.github.io/#organization",
+        "name": "TrashApps Entertainment",
+        "url": "https://trashappsent.github.io/",
+        "logo": "https://trashappsent.github.io/images/header-bg.png",
+        "email": "trashappsentertainment@gmail.com",
+        "sameAs": [
+          "https://www.youtube.com/@trashappsent",
+          "https://www.facebook.com/trashapps",
+          "https://www.tiktok.com/@trashappsent",
+          "https://www.instagram.com/trashapps/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://trashappsent.github.io/#website",
+        "name": "TrashApps Entertainment",
+        "url": "https://trashappsent.github.io/",
+        "publisher": { "@id": "https://trashappsent.github.io/#organization" }
+      },
+      {
+        "@type": "MobileApplication",
+        "name": "Tap Drag Racer",
+        "description": "No throttle here, you run the engine by hand. Fire each piston in time with the crank and tap your way down the strip.",
+        "image": "https://trashappsent.github.io/images/drag-racer.png",
+        "operatingSystem": "Android, iOS",
+        "applicationCategory": "GameApplication",
+        "applicationSubCategory": "Racing",
+        "publisher": { "@id": "https://trashappsent.github.io/#organization" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "sameAs": [
+          "https://play.google.com/store/apps/details?id=com.trashapps.tapdragracing",
+          "https://apps.apple.com/us/app/tap-drag-racer/id6820187710"
+        ]
+      },
+      {
+        "@type": "MobileApplication",
+        "name": "Book of Lies: Mindcrawler",
+        "description": "Welcome to the Book of Lies, where dragons ask questions and wrong answers hurt. Literally.",
+        "image": "https://trashappsent.github.io/images/book-of-lies-2.png",
+        "operatingSystem": "Android, iOS",
+        "applicationCategory": "GameApplication",
+        "applicationSubCategory": "Trivia",
+        "publisher": { "@id": "https://trashappsent.github.io/#organization" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "sameAs": [
+          "https://play.google.com/store/apps/details?id=com.trashapps.bookoflies2",
+          "https://apps.apple.com/us/app/book-of-lies-mindcrawler/id6758210945"
+        ]
+      }
+    ]
+  }
+  </script>
   <style>
     /* Global Styles */
     :root {
@@ -331,7 +410,10 @@
 <body>
 
   <header id="home">
-    <img class="header-logo" src="images/header-bg.png" alt="TrashApps raccoon logo" />
+    <picture>
+      <source srcset="images/header-logo.webp" type="image/webp" />
+      <img class="header-logo" src="images/header-bg.png" alt="TrashApps raccoon logo" width="840" height="587" fetchpriority="high" />
+    </picture>
     <h1>TrashApps Entertainment</h1>
     <p>Making indie games with heart, humor, and a little bit of chaos</p>
     <div class="socials">
@@ -366,7 +448,47 @@
 
   <section id="apps">
     <h2>Our Games</h2>
-    <div class="apps-grid" id="appsGrid"></div>
+    <div class="apps-grid">
+      <div class="app-card coming-soon">
+        <div class="app-logo">
+          <img src="images/pov-guesser.png" alt="POV Guesser app icon" width="192" height="192" loading="lazy">
+        </div>
+        <span class="badge">Coming soon</span>
+        <h3>POV Guesser</h3>
+        <p>You're standing somewhere on the island. Read the hills, the coast and the snow lines, then find your spot on the map. A new daily challenge every day.</p>
+        <div class="coming-soon-note">Coming soon to Android &amp; iOS</div>
+      </div>
+      <div class="app-card">
+        <div class="app-logo">
+          <img src="images/drag-racer.png" alt="Tap Drag Racer app icon" width="192" height="192" loading="lazy">
+        </div>
+        <h3>Tap Drag Racer</h3>
+        <p>No throttle here, you run the engine by hand. Fire each piston in time with the crank and tap your way down the strip.</p>
+        <div class="app-buttons">
+          <a href="https://play.google.com/store/apps/details?id=com.trashapps.tapdragracing" target="_blank" rel="noopener" aria-label="Get it on Google Play">
+            <img src="images/google-play-badge.png" alt="Get it on Google Play">
+          </a>
+          <a href="https://apps.apple.com/us/app/tap-drag-racer/id6820187710" target="_blank" rel="noopener" aria-label="Get it on AppStore">
+            <img src="images/appstore-badge.svg" alt="Get it on AppStore">
+          </a>
+        </div>
+      </div>
+      <div class="app-card">
+        <div class="app-logo">
+          <img src="images/book-of-lies-2.png" alt="Book of Lies: Mindcrawler app icon" width="192" height="192" loading="lazy">
+        </div>
+        <h3>Book of Lies: Mindcrawler</h3>
+        <p>Welcome to the Book of Lies, where dragons ask questions and wrong answers hurt. Literally.</p>
+        <div class="app-buttons">
+          <a href="https://play.google.com/store/apps/details?id=com.trashapps.bookoflies2&amp;pli=1" target="_blank" rel="noopener" aria-label="Get it on Google Play">
+            <img src="images/google-play-badge.png" alt="Get it on Google Play">
+          </a>
+          <a href="https://apps.apple.com/us/app/book-of-lies-mindcrawler/id6758210945" target="_blank" rel="noopener" aria-label="Get it on AppStore">
+            <img src="images/appstore-badge.svg" alt="Get it on AppStore">
+          </a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="privacy">
@@ -406,121 +528,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
         </a>
       </div>
-    &copy; 2025 TrashApps Entertainment. All rights reserved.
+    &copy; 2025&ndash;2026 TrashApps Entertainment. All rights reserved.
   </footer>
-<script>
-  const games = [
-    {
-      title: "POV Guesser",
-      description:
-        "You're standing somewhere on the island. Read the hills, the coast and the snow lines, then find your spot on the map. A new daily challenge every day.",
-      logo: "images/pov-guesser.png",
-      comingSoon: true,
-      links: [
-        {
-          type: "image",
-          img: "images/google-play-badge.png",
-          alt: "Get it on Google Play",
-          url: "https://play.google.com/store/apps/details?id=com.trashapps.povguesser"
-        },
-        {
-          type: "image",
-          img: "images/appstore-badge.svg",
-          alt: "Get it on AppStore",
-          url: "https://apps.apple.com/app/id6827264566"
-        }
-      ]
-    },
-    {
-      title: "Tap Drag Racer",
-      description:
-        "No throttle here, you run the engine by hand. Fire each piston in time with the crank and tap your way down the strip.",
-      logo: "images/drag-racer.png",
-      links: [
-        {
-          type: "image",
-          img: "images/google-play-badge.png",
-          alt: "Get it on Google Play",
-          url: "https://play.google.com/store/apps/details?id=com.trashapps.tapdragracing"
-        },
-        {
-          type: "image",
-          img: "images/appstore-badge.svg",
-          alt: "Get it on AppStore",
-          url: "https://apps.apple.com/us/app/tap-drag-racer/id6820187710"
-        }
-      ]
-    },
-    {
-      title: "Book of Lies: Mindcrawler",
-      description:
-        "Welcome to the Book of Lies, where dragons ask questions and wrong answers hurt. Literally.",
-      logo: "images/book-of-lies-2.png",
-      links: [
-        {
-          type: "image",
-          img: "images/google-play-badge.png",
-          alt: "Get it on Google Play",
-          url: "https://play.google.com/store/apps/details?id=com.trashapps.bookoflies2&pli=1"
-        },
-        {
-          type: "image",
-          img: "images/appstore-badge.svg",
-          alt: "Get it on AppStore",
-          url: "https://apps.apple.com/us/app/book-of-lies-mindcrawler/id6758210945"
-        }
-      ]
-    },
-  ];
-
-  const appsGrid = document.getElementById("appsGrid");
-
-  games.forEach(game => {
-    const card = document.createElement("div");
-    card.className = "app-card";
-
-    const logoHTML = game.logo
-      ? `
-        <div class="app-logo">
-          <img src="${game.logo}" alt="${game.title} logo">
-        </div>
-      `
-      : "";
-
-    const buttonsHTML = game.links
-      .map(link => {
-        if (link.type === "image") {
-          return `
-            <a href="${link.url}" target="_blank" rel="noopener" aria-label="${link.alt}">
-              <img src="${link.img}" alt="${link.alt}">
-            </a>
-          `;
-        } else {
-          return `
-            <a href="${link.url}" target="_blank" rel="noopener" class="text-button">
-              ${link.label}
-            </a>
-          `;
-        }
-      })
-      .join("");
-
-    const footerHTML = game.comingSoon
-      ? `<div class="coming-soon-note">Coming soon to Android &amp; iOS</div>`
-      : `<div class="app-buttons">${buttonsHTML}</div>`;
-
-    if (game.comingSoon) card.classList.add("coming-soon");
-
-    card.innerHTML = `
-      ${logoHTML}
-      ${game.comingSoon ? `<span class="badge">Coming soon</span>` : ""}
-      <h3>${game.title}</h3>
-      <p>${game.description}</p>
-      ${footerHTML}
-    `;
-
-    appsGrid.appendChild(card);
-  });
-</script>
 </body>
 </html>
